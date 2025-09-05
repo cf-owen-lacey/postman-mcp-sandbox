@@ -261,7 +261,47 @@
 											]
 										}
 									},
-									"response": []
+									"response": [
+										{
+											"id": "43714400-04809fed-b47d-4a5a-b5c2-eb1c50e7124d",
+											"name": "Delete Report",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"flightIds\": [\n    \"632cf0fa-cd5b-1616-d188-01eca2af0d41\",\n    \"4272167d-c02f-f3b6-c10b-1f158643bb3c\"\n  ]\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/reports/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reports",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "4357ddf6-03fd-cd56-986a-3e4dc8a3559f"
+														}
+													]
+												}
+											},
+											"_postman_previewlanguage": null,
+											"header": null,
+											"cookie": [],
+											"responseTime": null,
+											"body": null
+										}
+									]
 								}
 							],
 							"id": "43714400-b5da30e4-e1f3-4a77-b946-e812630e79d4"
