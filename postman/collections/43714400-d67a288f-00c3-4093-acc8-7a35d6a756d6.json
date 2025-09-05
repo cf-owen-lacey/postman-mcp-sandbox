@@ -228,6 +228,18 @@
 							"id": "43714400-b5da30e4-e1f3-4a77-b946-e812630e79d4"
 						},
 						{
+							"name": "New Request",
+							"id": "43714400-ec86c958-26ec-4f11-9e5e-9bf3ea156648",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
 							"name": "Get Reports",
 							"id": "43714400-5dade797-5ac3-4ccd-a4c7-64303d5dcd93",
 							"protocolProfileBehavior": {
