@@ -461,10 +461,28 @@
 			"id": "43714400-061c8f94-69d6-48d3-9e76-0abdb7cf0d38"
 		}
 	],
-	"variable": [
+	"event": [
 		{
-			"key": "baseUrl",
-			"value": "/"
+			"listen": "prerequest",
+			"script": {
+				"id": "da177e50-a8c2-44aa-86e8-4e67dc95a01d",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b769e815-916f-4118-ba38-a437a28ac2c6",
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
 		}
 	]
 }
