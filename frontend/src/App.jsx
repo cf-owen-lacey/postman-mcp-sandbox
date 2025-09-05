@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 
-const API_BASE = '/api';
+const API_BASE = 'http://localhost:5174/api';
 
 function App() {
   const [flights, setFlights] = useState([]);

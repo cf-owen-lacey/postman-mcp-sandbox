@@ -14,7 +14,7 @@
       "cwd": "${workspaceFolder}/backend/FlightApi",
       "env": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_URLS": "http://localhost:5073"
+        "ASPNETCORE_URLS": "http://localhost:5174"
       },
       "stopAtEntry": false
     },

@@ -17,11 +17,12 @@ API endpoints:
 # Running
 Backend:
 1. cd backend/FlightApi
-2. dotnet run --urls http://localhost:5073
+2. dotnet run --urls http://localhost:5174
 
 Frontend (in another terminal):
 1. cd frontend
 2. npm run dev
 3. Open http://localhost:5173
 
-Ensure backend CORS allows the frontend origin (configured for http://localhost:5173).
+The frontend now calls the backend directly at http://localhost:5174 (no dev proxy). Ensure backend is running first.
+Backend CORS policy allows origin http://localhost:5173.

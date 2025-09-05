@@ -7,7 +7,7 @@ builder.Services.AddCors(options =>
   options.AddPolicy("dev", p => p
       .AllowAnyHeader()
       .AllowAnyMethod()
-      .WithOrigins("http://localhost:5173")
+      .WithOrigins("http://localhost:5173") // frontend stays 5173
   );
 });
 
