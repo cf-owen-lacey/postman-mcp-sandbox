@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 import './App.css'
 
-const API_BASE = 'http://localhost:5174/api';
+// API base is now configurable via Vite env var for easier switching between
+// mock/postman, local, and deployed environments.
+const API_BASE = import.meta.env.VITE_API_BASE || 'http://localhost:5174/api';
 
 function App() {
   const [flights, setFlights] = useState([]);
@@ -11,6 +13,16 @@ function App() {
   const [selectedFlights, setSelectedFlights] = useState(new Set());
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [deletingIds, setDeletingIds] = useState(new Set());
+  const [toasts, setToasts] = useState([]);
+
+  function pushToast(message) {
+    const id = Date.now() + Math.random();
+    setToasts(t => [...t, { id, message }]);
+    setTimeout(() => {
+      setToasts(t => t.filter(x => x.id !== id));
+    }, 3000);
+  }
 
   async function load() {
     setLoading(true);
@@ -71,6 +83,25 @@ function App() {
     if (res.ok) load();
   }
 
+  async function deleteReport(id) {
+    if (!confirm('Delete this report?')) return;
+    setDeletingIds(prev => new Set([...prev, id]));
+    try {
+      const res = await fetch(`${API_BASE}/reports/${id}`, { method: 'DELETE' });
+      if (res.ok) {
+        // Optimistic local removal without full reload
+        setReports(rs => rs.filter(r => r.id !== id));
+        pushToast('Report deleted');
+      } else {
+        alert('Failed to delete report');
+      }
+    } catch (e) {
+      alert('Error deleting report: ' + e.message);
+    } finally {
+      setDeletingIds(prev => { const n = new Set(prev); n.delete(id); return n; });
+    }
+  }
+
   if (loading) return <p>Loading...</p>;
   if (error) return <p style={{color:'red'}}>Error: {error}</p>;
 
@@ -123,11 +154,22 @@ function App() {
                   </ul>
                 </div>
                 <button onClick={()=>updateReport(r.id,{ title: r.title + ' *' })}>Append *</button>
+                <button
+                  onClick={()=>deleteReport(r.id)}
+                  disabled={deletingIds.has(r.id)}
+                  style={{ marginLeft: '.5rem', background: 'crimson', color: 'white' }}
+                >{deletingIds.has(r.id) ? 'Deleting…' : 'Delete'}</button>
               </details>
             </li>
           ))}
         </ul>
       </section>
+      {/* Toasts */}
+      <div className="toast-container" aria-live="polite" aria-atomic="true">
+        {toasts.map(t => (
+          <div key={t.id} className="toast">{t.message}</div>
+        ))}
+      </div>
     </div>
   );
 }

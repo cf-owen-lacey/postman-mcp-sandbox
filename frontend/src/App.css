@@ -49,3 +49,8 @@ form div { margin: .5rem 0; }
 button { cursor: pointer; }
 details summary { cursor: pointer; font-weight: 600; }
 strong { font-weight: 600; }
+
+/* Toasts */
+.toast-container { position: fixed; top: 1rem; right: 1rem; display: flex; flex-direction: column; gap: .5rem; z-index: 1000; }
+.toast { background: #222; color: #fff; padding: .5rem .75rem; border-radius: 4px; box-shadow: 0 2px 6px rgba(0,0,0,.3); font-size: .85rem; animation: fade-slide .25s ease-out; }
+@keyframes fade-slide { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: translateY(0); } }
