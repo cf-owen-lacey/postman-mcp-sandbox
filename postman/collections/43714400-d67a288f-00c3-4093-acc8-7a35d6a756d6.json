@@ -224,48 +224,48 @@
 											"body": null
 										}
 									]
+								},
+								{
+									"name": "New Request",
+									"id": "43714400-ec86c958-26ec-4f11-9e5e-9bf3ea156648",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"flightIds\": [\n    \"632cf0fa-cd5b-1616-d188-01eca2af0d41\",\n    \"4272167d-c02f-f3b6-c10b-1f158643bb3c\"\n  ]\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/reports/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reports",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "26bdf58e-fe75-44e0-9bae-b2df2bc8816d",
+													"key": "id",
+													"value": ""
+												}
+											]
+										}
+									},
+									"response": []
 								}
 							],
 							"id": "43714400-b5da30e4-e1f3-4a77-b946-e812630e79d4"
-						},
-						{
-							"name": "New Request",
-							"id": "43714400-ec86c958-26ec-4f11-9e5e-9bf3ea156648",
-							"protocolProfileBehavior": {
-								"disableBodyPruning": true
-							},
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json"
-									}
-								],
-								"body": {
-									"mode": "raw",
-									"raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"flightIds\": [\n    \"632cf0fa-cd5b-1616-d188-01eca2af0d41\",\n    \"4272167d-c02f-f3b6-c10b-1f158643bb3c\"\n  ]\n}"
-								},
-								"url": {
-									"raw": "{{baseUrl}}/api/reports/:id",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"api",
-										"reports",
-										":id"
-									],
-									"variable": [
-										{
-											"id": "26bdf58e-fe75-44e0-9bae-b2df2bc8816d",
-											"key": "id",
-											"value": ""
-										}
-									]
-								}
-							},
-							"response": []
 						},
 						{
 							"name": "Get Reports",
