@@ -12,6 +12,107 @@
 					"name": "flights",
 					"item": [
 						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get Flight By Id",
+									"id": "43714400-9a0c1b3e-8934-4655-a665-6a1c0674d5d2",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"flightIds\": [\n    \"632cf0fa-cd5b-1616-d188-01eca2af0d41\",\n    \"4272167d-c02f-f3b6-c10b-1f158643bb3c\"\n  ]\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/flights/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"flights",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "43714400-45df568b-e223-4158-b149-63797083d0e1",
+											"name": "Get Flight By Id",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"flightIds\": [\n    \"632cf0fa-cd5b-1616-d188-01eca2af0d41\",\n    \"4272167d-c02f-f3b6-c10b-1f158643bb3c\"\n  ]\n}"
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/flights/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"flights",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "4357ddf6-03fd-cd56-986a-3e4dc8a3559f",
+															"description": "(Required) "
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"description": "",
+													"type": "text"
+												}
+											],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
+											"responseTime": null,
+											"body": "{\n    \"id\": \"4357ddf6-03fd-cd56-986a-3e4dc8a3559f\",\n    \"number\": \"FL100\",\n    \"origin\": \"JFK\",\n    \"destination\": \"LAX\",\n    \"departureUtc\": \"2025-09-05T08:15:00Z\",\n    \"arrivalUtc\": \"2025-09-05T11:10:00Z\",\n    \"status\": \"On Time\"\n}"
+										}
+									]
+								}
+							],
+							"id": "43714400-5fa8da00-0e07-403f-9bee-462abf946a2c"
+						},
+						{
 							"name": "Get Flights",
 							"id": "43714400-38a8eaff-3d2e-4e8f-af08-eb64ae04750e",
 							"protocolProfileBehavior": {
@@ -52,10 +153,17 @@
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "text",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"responseTime": null,
-									"body": null
+									"body": "[\n  {\n    \"id\": \"00000000-0000-0000-0000-000000000001\",\n    \"number\": \"FL100\",\n    \"origin\": \"JFK\",\n    \"destination\": \"LAX\",\n    \"departureUtc\": \"2025-09-05T08:15:00Z\",\n    \"arrivalUtc\": \"2025-09-05T11:10:00Z\",\n    \"status\": \"On Time\"\n  },\n  {\n    \"id\": \"00000000-0000-0000-0000-000000000002\",\n    \"number\": \"FL200\",\n    \"origin\": \"LAX\",\n    \"destination\": \"ORD\",\n    \"departureUtc\": \"2025-09-05T12:30:00Z\",\n    \"arrivalUtc\": \"2025-09-05T16:05:00Z\",\n    \"status\": \"Delayed\"\n  },\n  {\n    \"id\": \"00000000-0000-0000-0000-000000000003\",\n    \"number\": \"FL300\",\n    \"origin\": \"SEA\",\n    \"destination\": \"DEN\",\n    \"departureUtc\": \"2025-09-05T09:45:00Z\",\n    \"arrivalUtc\": \"2025-09-05T13:00:00Z\",\n    \"status\": \"Boarding\"\n  }\n]"
 								}
 							]
 						}
@@ -89,7 +197,7 @@
 											],
 											"variable": [
 												{
-													"id": "7e7d1cba-6207-450b-a611-0d9cda5d1bb1",
+													"id": "d3dfa46f-e307-4dc2-8220-943d733d494b",
 													"key": "id",
 													"value": "4357ddf6-03fd-cd56-986a-3e4dc8a3559f",
 													"description": "(Required) "
@@ -167,7 +275,7 @@
 											],
 											"variable": [
 												{
-													"id": "c39d7da3-a8fa-450e-81ed-7f4bf66393a9",
+													"id": "2ea1643c-22bb-4cb5-8654-0800f59271cd",
 													"key": "id",
 													"value": "4357ddf6-03fd-cd56-986a-3e4dc8a3559f",
 													"description": "(Required) "
@@ -258,6 +366,7 @@
 									],
 									"variable": [
 										{
+											"id": "75185808-9583-4c5b-a27a-77b81f9c68e6",
 											"key": "id",
 											"value": ""
 										}
