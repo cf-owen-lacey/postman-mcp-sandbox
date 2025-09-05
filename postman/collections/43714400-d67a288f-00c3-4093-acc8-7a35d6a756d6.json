@@ -324,7 +324,7 @@
 										],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n  \"title\": \"test3\",\n  \"description\": \"\",\n  \"flightIds\": [\n    \"632cf0fa-cd5b-1616-d188-01eca2af0d41\",\n    \"4272167d-c02f-f3b6-c10b-1f158643bb3c\"\n  ]\n}",
+											"raw": "{\n  \"title\": \"test3\",\n  \"description\": \"description\",\n  \"flightIds\": [\n    \"632cf0fa-cd5b-1616-d188-01eca2af0d41\",\n    \"4272167d-c02f-f3b6-c10b-1f158643bb3c\"\n  ]\n}",
 											"options": {
 												"raw": {
 													"headerFamily": "json",
