@@ -13,3 +13,15 @@ API endpoints:
 - GET /api/reports/{id} - Get a report by ID
 - PUT /api/reports/{id} - Update a report by ID
 - DON'T IMPLEMENT DELETE yet
+
+# Running
+Backend:
+1. cd backend/FlightApi
+2. dotnet run --urls http://localhost:5073
+
+Frontend (in another terminal):
+1. cd frontend
+2. npm run dev
+3. Open http://localhost:5173
+
+Ensure backend CORS allows the frontend origin (configured for http://localhost:5173).

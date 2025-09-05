@@ -1,0 +1,47 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    // Backend: launch the .NET 8 Flight API
+    {
+      "name": "Backend: Flight API",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "build-backend",
+      "program": "${workspaceFolder}/backend/FlightApi/bin/Debug/net8.0/FlightApi.dll",
+      "cwd": "${workspaceFolder}/backend/FlightApi",
+      "env": {
+        "ASPNETCORE_ENVIRONMENT": "Development",
+        "ASPNETCORE_URLS": "http://localhost:5073"
+      },
+      "stopAtEntry": false
+    },
+    // Optional: start Vite dev server via Node (can be used instead of manually running npm script)
+    {
+      "name": "Frontend: Vite Dev Server (npm run dev)",
+      "type": "node",
+      "request": "launch",
+      "cwd": "${workspaceFolder}/frontend",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": [
+        "run",
+        "dev"
+      ],
+      "console": "integratedTerminal",
+      "skipFiles": [
+        "<node_internals>/**"
+      ]
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Run Full App (Backend + Frontend)",
+      "configurations": [
+        "Backend: Flight API",
+        "Frontend: Vite Dev Server (npm run dev)"
+      ]
+    }
+  ]
+}
