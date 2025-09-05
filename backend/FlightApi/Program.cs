@@ -17,53 +17,35 @@ Directory.CreateDirectory(dataDir);
 
 // Attempt to load flights from JSON file; fallback to defaults
 List<Flight> flights;
-try
+var flightsPath = Path.Combine(dataDir, "flights.json");
+if (File.Exists(flightsPath))
 {
-  var flightsPath = Path.Combine(dataDir, "flights.json");
-  if (File.Exists(flightsPath))
+  var json = File.ReadAllText(flightsPath);
+  var loaded = System.Text.Json.JsonSerializer.Deserialize<List<Flight>>(json, new System.Text.Json.JsonSerializerOptions
   {
-    var json = File.ReadAllText(flightsPath);
-    var loaded = System.Text.Json.JsonSerializer.Deserialize<List<Flight>>(json, new System.Text.Json.JsonSerializerOptions
-    {
-      PropertyNameCaseInsensitive = true
-    });
-    flights = loaded?.Where(f => f is not null).ToList() ?? new();
-    if (!flights.Any()) throw new Exception("No flights loaded");
-  }
-  else
-  {
-    throw new FileNotFoundException("flights.json not found");
-  }
+    PropertyNameCaseInsensitive = true
+  });
+  flights = loaded?.Where(f => f is not null).ToList() ?? new();
+  if (!flights.Any()) throw new Exception("No flights loaded");
 }
-catch
+else
 {
-  flights = new List<Flight>
-    {
-        new(Guid.NewGuid(), "FL100", "JFK", "LAX", new DateTime(2025, 09, 05, 8, 15, 0, DateTimeKind.Utc), new DateTime(2025, 09, 05, 11, 10, 0, DateTimeKind.Utc), "On Time"),
-        new(Guid.NewGuid(), "FL200", "LAX", "ORD", new DateTime(2025, 09, 05, 12, 30, 0, DateTimeKind.Utc), new DateTime(2025, 09, 05, 16, 05, 0, DateTimeKind.Utc), "Delayed"),
-        new(Guid.NewGuid(), "FL300", "SEA", "DEN", new DateTime(2025, 09, 05, 9, 45, 0, DateTimeKind.Utc), new DateTime(2025, 09, 05, 13, 00, 0, DateTimeKind.Utc), "Boarding"),
-    };
+  throw new FileNotFoundException("flights.json not found");
 }
+
 
 // Load reports from JSON if present, else start empty; save after create/update
 var reportsPath = Path.Combine(dataDir, "reports.json");
 List<Report> reports;
-try
+if (File.Exists(reportsPath))
 {
-  if (File.Exists(reportsPath))
+  var json = File.ReadAllText(reportsPath);
+  reports = System.Text.Json.JsonSerializer.Deserialize<List<Report>>(json, new System.Text.Json.JsonSerializerOptions
   {
-    var json = File.ReadAllText(reportsPath);
-    reports = System.Text.Json.JsonSerializer.Deserialize<List<Report>>(json, new System.Text.Json.JsonSerializerOptions
-    {
-      PropertyNameCaseInsensitive = true
-    }) ?? new List<Report>();
-  }
-  else
-  {
-    reports = new List<Report>();
-  }
+    PropertyNameCaseInsensitive = true
+  }) ?? new List<Report>();
 }
-catch
+else
 {
   reports = new List<Report>();
 }
@@ -95,9 +77,18 @@ app.UseHttpsRedirection();
 // Apply CORS policy
 app.UseCors("dev");
 
-// GET /api/flights - all flights
+// GET /api/flights - all flights 
 app.MapGet("/api/flights", () => Results.Ok(flights))
     .WithName("GetFlights")
+    .WithOpenApi();
+
+// GET /api/flights/{id} - flight by id
+app.MapGet("/api/flights/{id:guid}", (Guid id) =>
+{
+  var flight = flights.FirstOrDefault(f => f.Id == id);
+  return flight is null ? Results.NotFound() : Results.Ok(flight);
+})
+    .WithName("GetFlightById")
     .WithOpenApi();
 
 // GET /api/reports - all reports
@@ -158,7 +149,17 @@ app.MapPut("/api/reports/{id:guid}", (Guid id, UpdateReportRequest req) =>
 app.Run();
 
 // Domain models / DTOs
-record Flight(Guid Id, string Number, string Origin, string Destination, DateTime DepartureUtc, DateTime ArrivalUtc, string Status);
+
+class Flight
+{
+  public Guid Id { get; set; }
+  public string Number { get; set; } = string.Empty;
+  public string Origin { get; set; } = string.Empty;
+  public string Destination { get; set; } = string.Empty;
+  public DateTime DepartureUtc { get; set; }
+  public DateTime ArrivalUtc { get; set; }
+  public string Status { get; set; } = string.Empty;
+}
 
 class Report
 {
