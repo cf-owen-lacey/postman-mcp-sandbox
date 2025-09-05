@@ -264,7 +264,7 @@
 									"response": [
 										{
 											"id": "43714400-04809fed-b47d-4a5a-b5c2-eb1c50e7124d",
-											"name": "Delete Report",
+											"name": "No Content",
 											"originalRequest": {
 												"method": "DELETE",
 												"header": [
@@ -295,11 +295,19 @@
 													]
 												}
 											},
-											"_postman_previewlanguage": null,
-											"header": null,
-											"cookie": [],
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "",
+											"header": [],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
 											"responseTime": null,
-											"body": null
+											"body": ""
 										}
 									]
 								}
