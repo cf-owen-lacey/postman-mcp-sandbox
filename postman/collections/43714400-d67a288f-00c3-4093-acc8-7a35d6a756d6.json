@@ -97,10 +97,17 @@
 									"status": "OK",
 									"code": 200,
 									"_postman_previewlanguage": "text",
-									"header": [],
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json",
+											"description": "",
+											"type": "text"
+										}
+									],
 									"cookie": [],
 									"responseTime": null,
-									"body": null
+									"body": "[\n  {\n    \"id\": \"00000000-0000-0000-0000-000000000001\",\n    \"number\": \"FL100\",\n    \"origin\": \"JFK\",\n    \"destination\": \"LAX\",\n    \"departureUtc\": \"2025-09-05T08:15:00Z\",\n    \"arrivalUtc\": \"2025-09-05T11:10:00Z\",\n    \"status\": \"On Time\"\n  },\n  {\n    \"id\": \"00000000-0000-0000-0000-000000000002\",\n    \"number\": \"FL200\",\n    \"origin\": \"LAX\",\n    \"destination\": \"ORD\",\n    \"departureUtc\": \"2025-09-05T12:30:00Z\",\n    \"arrivalUtc\": \"2025-09-05T16:05:00Z\",\n    \"status\": \"Delayed\"\n  },\n  {\n    \"id\": \"00000000-0000-0000-0000-000000000003\",\n    \"number\": \"FL300\",\n    \"origin\": \"SEA\",\n    \"destination\": \"DEN\",\n    \"departureUtc\": \"2025-09-05T09:45:00Z\",\n    \"arrivalUtc\": \"2025-09-05T13:00:00Z\",\n    \"status\": \"Boarding\"\n  }\n]"
 								}
 							]
 						}
