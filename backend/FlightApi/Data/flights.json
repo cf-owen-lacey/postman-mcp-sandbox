@@ -1,0 +1,29 @@
+[
+  {
+    "id": "00000000-0000-0000-0000-000000000001",
+    "number": "FL100",
+    "origin": "JFK",
+    "destination": "LAX",
+    "departureUtc": "2025-09-05T08:15:00Z",
+    "arrivalUtc": "2025-09-05T11:10:00Z",
+    "status": "On Time"
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000002",
+    "number": "FL200",
+    "origin": "LAX",
+    "destination": "ORD",
+    "departureUtc": "2025-09-05T12:30:00Z",
+    "arrivalUtc": "2025-09-05T16:05:00Z",
+    "status": "Delayed"
+  },
+  {
+    "id": "00000000-0000-0000-0000-000000000003",
+    "number": "FL300",
+    "origin": "SEA",
+    "destination": "DEN",
+    "departureUtc": "2025-09-05T09:45:00Z",
+    "arrivalUtc": "2025-09-05T13:00:00Z",
+    "status": "Boarding"
+  }
+]
