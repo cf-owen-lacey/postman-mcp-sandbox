@@ -12,6 +12,11 @@
 					"name": "flights",
 					"item": [
 						{
+							"name": "New Folder",
+							"item": [],
+							"id": "43714400-5fa8da00-0e07-403f-9bee-462abf946a2c"
+						},
+						{
 							"name": "Get Flights",
 							"id": "43714400-38a8eaff-3d2e-4e8f-af08-eb64ae04750e",
 							"protocolProfileBehavior": {
