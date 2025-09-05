@@ -86,11 +86,26 @@
 													]
 												}
 											},
-											"_postman_previewlanguage": null,
-											"header": null,
-											"cookie": [],
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json",
+													"description": "",
+													"type": "text"
+												}
+											],
+											"cookie": [
+												{
+													"expires": "Invalid Date",
+													"domain": "",
+													"path": ""
+												}
+											],
 											"responseTime": null,
-											"body": null
+											"body": "{\n    \"id\": \"4357ddf6-03fd-cd56-986a-3e4dc8a3559f\",\n    \"number\": \"FL100\",\n    \"origin\": \"JFK\",\n    \"destination\": \"LAX\",\n    \"departureUtc\": \"2025-09-05T08:15:00Z\",\n    \"arrivalUtc\": \"2025-09-05T11:10:00Z\",\n    \"status\": \"On Time\"\n}"
 										}
 									]
 								}
