@@ -1,0 +1,369 @@
+{
+	"info": {
+		"_postman_id": "43714400-d67a288f-00c3-4093-acc8-7a35d6a756d6",
+		"name": "FlightApi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "flights",
+					"item": [
+						{
+							"name": "Get Flights",
+							"id": "43714400-38a8eaff-3d2e-4e8f-af08-eb64ae04750e",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/flights",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"flights"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "43714400-ba57e000-5268-41a1-a765-032f08461e8e",
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/flights",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"flights"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "43714400-f977d3d1-0514-4b2f-9c3b-60456e0069fd"
+				},
+				{
+					"name": "reports",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "Get Report By Id",
+									"id": "43714400-117c4491-e85a-4e58-b149-956eea034bca",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/reports/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reports",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "7e7d1cba-6207-450b-a611-0d9cda5d1bb1",
+													"key": "id",
+													"value": "4357ddf6-03fd-cd56-986a-3e4dc8a3559f",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "43714400-ed306d1c-21a9-4417-b0d7-e1aae2f94be6",
+											"name": "OK",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/reports/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reports",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": null
+										}
+									]
+								},
+								{
+									"name": "Update Report",
+									"id": "43714400-ad78f5e3-71c6-4e66-8bd7-2c7adee0eacf",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"flightIds\": [\n    \"632cf0fa-cd5b-1616-d188-01eca2af0d41\",\n    \"4272167d-c02f-f3b6-c10b-1f158643bb3c\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/reports/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reports",
+												":id"
+											],
+											"variable": [
+												{
+													"id": "c39d7da3-a8fa-450e-81ed-7f4bf66393a9",
+													"key": "id",
+													"value": "4357ddf6-03fd-cd56-986a-3e4dc8a3559f",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "43714400-b7fade9e-1ecc-4937-b072-abf787671dc9",
+											"name": "OK",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"flightIds\": [\n    \"632cf0fa-cd5b-1616-d188-01eca2af0d41\",\n    \"4272167d-c02f-f3b6-c10b-1f158643bb3c\"\n  ]\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/reports/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"reports",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": null
+										}
+									]
+								}
+							],
+							"id": "43714400-b5da30e4-e1f3-4a77-b946-e812630e79d4"
+						},
+						{
+							"name": "Get Reports",
+							"id": "43714400-5dade797-5ac3-4ccd-a4c7-64303d5dcd93",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/api/reports",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reports"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "43714400-84c72a6f-c89b-40cb-9c5d-046a53845e34",
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/reports",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reports"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": null
+								}
+							]
+						},
+						{
+							"name": "Create Report",
+							"id": "43714400-e3d4eeb2-0afe-4a77-8f58-d337c3ccaa57",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"flightIds\": [\n    \"632cf0fa-cd5b-1616-d188-01eca2af0d41\",\n    \"4272167d-c02f-f3b6-c10b-1f158643bb3c\"\n  ]\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/api/reports",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"api",
+										"reports"
+									]
+								}
+							},
+							"response": [
+								{
+									"id": "43714400-0c043d3d-53e9-4ebc-a4f8-c32e519d333c",
+									"name": "OK",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"title\": \"string\",\n  \"description\": \"string\",\n  \"flightIds\": [\n    \"632cf0fa-cd5b-1616-d188-01eca2af0d41\",\n    \"4272167d-c02f-f3b6-c10b-1f158643bb3c\"\n  ]\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/api/reports",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"reports"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [],
+									"cookie": [],
+									"responseTime": null,
+									"body": null
+								}
+							]
+						}
+					],
+					"id": "43714400-1e97c1f9-b2a5-41bd-ba06-7d130f9090ed"
+				}
+			],
+			"id": "43714400-061c8f94-69d6-48d3-9e76-0abdb7cf0d38"
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "/"
+		}
+	]
+}
